@@ -1,0 +1,14 @@
+{% extends "./includes/base.html" %}
+
+{% block title%}
+My Course Tracker
+{% endblock %}
+
+{% block content %}
+
+<h3 class="ui header" >Welcome to my Course Tracker</h3>
+<a href="{{ url_for('index_courses') }}">
+   List of Courses
+</a>
+
+{% endblock %}

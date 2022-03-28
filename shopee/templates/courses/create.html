@@ -1,0 +1,59 @@
+{% extends "./includes/base.html" %}
+
+{% block title %}
+Create Course
+{% endblock %}
+
+{% block content %}
+
+<h2 class="ui dividing header">Create Courses</h2>
+
+</form class="ui equal width form" method="POST" >
+
+     <div class="field">
+         <label for="courseName">Course Name</label>
+         <input id="courseName" name="coursename" type="text">
+     </div>
+
+     <h5>Start Date</h5>
+     <div class="fields">
+        <div class="field">
+            <input type="number" placeholder="Day" name="start-day" min="1" max="31">
+        </div>
+        <div class="field">
+            <input type="number" placeholder="Month" name="start-month" min="1" max="12">
+        </div>
+        <div class="field">
+            <input type="number" placeholder="Year" name="start-year" min="2022" max="9999">
+        </div>
+            
+     </div>
+
+     <h5>End Date</h5>
+     <div class="fields">
+        <div class="field">
+            <input type="number" placeholder="Day" name="end-day" min="1" max="31">
+        </div>
+        <div class="field">
+            <input type="number" placeholder="Month" name="end-month" min="1" max="12">
+        </div>
+        <div class="field">
+            <input type="number" placeholder="Year" name="end-year" min="2022" max="9999">
+        </div>
+     </div>
+
+     <div class="field">
+        <label for="instructor">instructor</label>
+        <input id="instructor" name="instructor" type="text">
+     </div>
+
+     <div class="field">
+        <label for="description">description</label>
+        <input id="description" name="description" type="text">
+     </div>
+
+     </form>
+
+     <a herf="{{ url_for('index_courses') }}">go back to courses</a>
+
+{% endblock %}
