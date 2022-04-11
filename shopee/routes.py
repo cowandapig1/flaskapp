@@ -1,5 +1,5 @@
 from shopee import app
-from flask import render_template, url_for, request, redirect, flash
+from flask import get_flashed_messages, render_template, url_for, request, redirect, flash
 from shopee.models import Products, Courses
 
 # app.config["SQL"]
@@ -40,6 +40,9 @@ def products_detail(pid):
 
 @app.route("/courses/")
 def index_courses():
+    message = get_flashed_messages()
+    if message:
+        flash(message)
     return render_template(
         "courses/courses.html"
     )

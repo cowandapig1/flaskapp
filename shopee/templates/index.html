@@ -5,7 +5,7 @@ Product List
 {% endblock %}
 
 {% block content %}
-
+    <h1>Welcome to the products page</h1>
     {% for row in rows %}
     <tr>
        <td class="selectable" >
@@ -15,5 +15,6 @@ Product List
        <td>{{ row['unit_price'] }}</td>
     </tr>
     {% endfor %}
+    <a href=" {{ url_for('home') }} ">Go Back Home </a>
 
 {% endblock %}

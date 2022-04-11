@@ -6,19 +6,8 @@ index_courses
 
 {% block content %}
 
-{% with mesages = get_flashed_mesages() %}
+       
 
-    {% if mesages %}
-        {% for messages in messages %}
-
-        <div class="ui success message">
-            <h3 class="header">Success</h3>
-            <p>{{ message }}</p>
-        </div>
-
-        {% endfor %}
-    {% endif %}
-{% endwith %}   
 
 <h1 class="ui dividing header" >Course List</h1>
 <a href="{{ url_for('add_course') }}">Add Course</a>
@@ -30,16 +19,17 @@ index_courses
         <td>End date</td>
         <td>Odpwerations</td>
     </theaddw>
-{% forwd wcourse in courses %}
-<tr>wd
-   <twdd class="selectable">a
-wad   </tdwd>dsd
-   <td>{{ courseaadd['c_dnwame'] }}</td>
-   <td>{{ cou   rse['start_date'] }}</td>
+{% for course in courses %}
+<tr>
+   <td class="selectable">{{course["c_id"]}}
+   </td>
+   <td>{{ course['c_name'] }}</td>
+   <td>{{ course['start_date'] }}</td>
    <td>{{ course['end_date'] }}</td>
 
    <td></td>
 </tr>
 <table>
+    {% endfor %}
     <a href="{{ url_for('home') }}">Go Back to Home Page</a>
 {% endblock %}
